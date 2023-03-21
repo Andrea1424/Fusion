@@ -88,32 +88,38 @@
                   <th scope="col-auto">Encargado</th>
                   <th scope="col-auto">Nrm. Encargado</th>
                   <th scope="col-auto">Lugar</th>
-                  <th scope="col-auto">Horario</th>
+                  <th scope="col-auto" style="width: 25%;">Horario</th>
                   <th scope="col-auto" class="text-center">Opciones</th>
                 </tr>
               </thead>
               <!-- Cuerpo de la tabla -->
               <tbody>
-                <tr>
-                  <th scope="row">Acondicionamiento Físico</th>
+                <tr *ngFor="let l of lista">
+                  <th scope="row">{{l.actividad}}</th>
                   <td> <span class="badge badge-deportiva p-2">Deportiva</span> </td>
-                  <td>Nombre Tutoria</td>
-                  <td>000-000-0000</td>
-                  <td>Ubicación</td>
-                  <td>00:00</td>
+                  <td>{{l.nombre + ' ' + l.apellidos}}</td>
+                  <td>{{l.telefono}}</td>
+                  <td>{{l.lugar}}</td>
+                  <td>
+                    <ul>
+                      <li *ngFor="let h of l.horarios">
+                        <strong>{{h.dia + ' de ' + h.hora_inicio + ' - ' + h.hora_fin}}</strong>
+                      </li>
+                    </ul>
+                  </td>
                   <td class="text-center">
                     <a class=" btn-status badge-deportiva dropdown-toggle" type="button" data-bs-toggle="dropdown"
                       aria-expanded="false">
                       Opciones
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item fw-bold" [routerLink]="['/detalle-tutoria']"><small>Ver Más</small></a></li>
+                      <li><a class="dropdown-item fw-bold" [routerLink]="['/detalle-tutoria',l.idActividad]"><small>Ver Más</small></a></li>
                       <li><a class="dropdown-item fw-bold" [routerLink]="['/crud-tutoria']"><small>Editar</small></a></li>
                       <li><a class="dropdown-item fw-bold btn-danger" href="#"><small>Eliminar</small></a></li>
                     </ul>
                   </td>
                 </tr>
-                <tr>
+                <!-- <tr>
                   <th scope="row">Danza y Canto</th>
                   <td> <span class="badge badge-cultural p-2">Cultural</span> </td>
                   <td>Nombre Tutoria</td>
@@ -130,8 +136,8 @@
                       <li><a class="dropdown-item fw-bold" href="#"><small>Eliminar</small></a></li>
                     </ul>
                   </td>
-                </tr>
-               <tr>
+                </tr> -->
+               <!-- <tr>
                   <th scope="row">Origami</th>
                   <td> <span class="badge badge-grupal p-2">Grupal</span> </td>
                   <td>Nombre Tutoria</td>
@@ -149,13 +155,13 @@
                       <li><a class="dropdown-item fw-bold" href="#"><small>Eliminar</small></a></li>
                     </ul>
                   </td>
-                </tr>
+                </tr> -->
                 
     
     
               </tbody>
             </table>
-            <nav aria-label="Page navigation example">
+            <!-- <nav aria-label="Page navigation example">
               <ul class="pagination justify-content-center">
                 <li class="page-item disabled">
                   <a class="page-link fw-bold">
@@ -168,10 +174,12 @@
                   <a class="page-link" href="#"> >> </a>
                 </li>
               </ul>
-            </nav>
+            </nav> -->
           </div>
         </div>
-    
+        <div align="center" *ngIf="lista == ''">
+          No hay registros
+        </div>
       </div>
     
     </div>

@@ -64,11 +64,11 @@ const routes: Routes = [
     loadChildren: () => import('./admin/home-admin/home-admin.module').then( m => m.HomeAdminPageModule)
   },
   {
-    path: 'lista-tutorias',
+    path: 'lista-tutorias/:id',
     loadChildren: () => import('./admin/lista-tutorias/lista-tutorias.module').then( m => m.ListaTutoriasPageModule)
   },
   {
-    path: 'detalle-tutoria',
+    path: 'detalle-tutoria/:id',
     loadChildren: () => import('./admin/detalle-tutoria/detalle-tutoria.module').then( m => m.DetalleTutoriaPageModule)
   },
   {
@@ -91,6 +91,11 @@ const routes: Routes = [
     path: 'finish',
     loadChildren: () => import('./client/finish/finish.module').then( m => m.FinishPageModule)
   },
+  {
+    path: 'list-documentos',
+    loadChildren: () => import('./admin/list-documentos/list-documentos.module').then( m => m.ListDocumentosPageModule)
+  },
+
 ];
 
 @NgModule({

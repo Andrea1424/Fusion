@@ -74,7 +74,7 @@
   <ion-content class="ion-padding">
     <!-- CONTENEDOR PRINCIPAL DE DETALLES DE TUTORÍA -->
     <div class="container text-center">
-      <div class="row ">
+      <div class="row " *ngFor="let a of actividad">
         <!-- COLUMNA Y CONTENEDOR PARA CARDS DE DATOS DE TUTORÍA -->
         <div class="col-md-4 m-auto  text-center">
           <div class="card p-1 ">
@@ -82,22 +82,13 @@
               <div class="col">
                 <div class=" card-bg-green m-auto text-white">
                   <div class="row  py-2">
-                    <div class="col ">
+                    <div class="col " *ngFor="let h of a.horarios">
                       <ion-icon name="calendar-number-outline" class="calendar-icon"></ion-icon>
                       <div class="fw-bold">
-                        <small class="text-dark  ">Lunes</small>
+                        <small class="text-dark  ">{{h.dia}}</small>
                       </div>
                       <span class="fw-bold text-dark">
-                        00:00 - 00:00
-                      </span>
-                    </div>
-                    <div class="col">
-                      <ion-icon name="calendar-number-outline" class="calendar-icon"></ion-icon>
-                      <div class="fw-bold">
-                        <small class="text-dark  ">Lunes</small>
-                      </div>
-                      <span class="fw-bold text-dark">
-                        00:00 - 00:00
+                        {{h.hora_inicio}} - {{h.hora_fin}}
                       </span>
                     </div>
                   </div>
@@ -114,7 +105,7 @@
                         <small class="text-dark  ">Lugar</small>
                       </div>
                       <span class="fw-bold text-dark">
-                        Lugar de Tutoria
+                        {{a.lugar}}
                       </span>
                     </div>
                   </div>
@@ -129,7 +120,7 @@
                         <small class="text-dark  ">Cupo</small>
                       </div>
                       <span class="fw-bold fs-6 text-dark">
-                        X lugares
+                        {{a.cupo}} lugares
                       </span>
                     </div>
                   </div>
@@ -147,7 +138,7 @@
                         <small class="text-dark  ">Hrs. Totales</small>
                       </div>
                       <span class="fw-bold text-dark">
-                        15 horas de actividad
+                        20 horas de actividad
                       </span>
                     </div>
                   </div>
@@ -162,7 +153,7 @@
                         <small class="text-dark  ">Encargado</small>
                       </div>
                       <span class="fw-bold text-dark">
-                        Nombre Encargado
+                        {{a.nombre}} {{a.apellidos}}
                       </span>
                     </div>
                   </div>
@@ -196,13 +187,13 @@
                       <h2 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
                           aria-expanded="true" aria-controls="collapseOne">
-                          <small>Objetivo de Tutoría</small>
+                          <small>Descripcion de la Tutoría</small>
                         </button>
                       </h2>
                       <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body text-start">
-                          <span><strong>Agregar Objetivo de la Tutoría</strong></span>
+                          <span><strong>{{a.descripcion}}</strong></span>
                         </div>
                       </div>
                     </div>
@@ -222,12 +213,12 @@
                       <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body text-start">
-                          <span>Ingresar Materiales requeridos para la actividad... <strong>*Opcional.</strong> </span>
-                          <ol class="list-group list-group-numbered">
+                          <span>{{a.material}}</span>
+                          <!-- <ol class="list-group list-group-numbered">
                             <li class="list-group-item">A list item</li>
                             <li class="list-group-item">A list item</li>
                             <li class="list-group-item">A list item</li>
-                          </ol>
+                          </ol> -->
                         </div>
                       </div>
                     </div>
@@ -245,11 +236,11 @@
                       <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body text-start">
-                          <span>Ingresar las reglas de la actividad... <strong class="text-danger">*Obligatorio.</strong> </span>
+                          <!-- <span>Ingresar las reglas de la actividad... <strong class="text-danger">*Obligatorio.</strong> </span> -->
                           <ol class="list-group list-group-numbered">
-                            <li class="list-group-item">A list item</li>
-                            <li class="list-group-item">A list item</li>
-                            <li class="list-group-item">A list item</li>
+                            <li class="list-group-item">Cumplir con las horas indicadas</li>
+                            <!-- <li class="list-group-item">A list item</li> -->
+                            <!-- <li class="list-group-item">A list item</li> -->
                           </ol>
                         </div>
                       </div>
@@ -257,7 +248,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row my-2 p-2 " style="background-color: #F1F5F9;">
+              <!-- <div class="row my-2 p-2 " style="background-color: #F1F5F9;">
                 <div class="col-6 m-auto">
                   <small class="fw-bold">Fecha de Inicio</small>
                   <p class="fs-6 fw-bold text-primary">00/00/00</p>
@@ -266,7 +257,7 @@
                   <small class="fw-bold">Fecha Termino</small>
                   <p class="fs-6 fw-bold text-danger">00/00/00</p>
                 </div>
-              </div>
+              </div> -->
               
             </div>
             
@@ -282,8 +273,8 @@
                   <h6 class="fw-bold px-4">Lista de alumnos de Tutoría</h6>
                 </div>
                 <div class="col-md-4 my-auto">
-                  <form class="d-flex px-4" role="search">
-                    <input class="form-control  me-2" type="search" placeholder="Search" aria-label="Search">
+                  <form class="d-flex px-4" role="search" (ngSubmit)="miForm(form)" #form="ngForm">
+                    <input class="form-control  me-2" type="search" placeholder="Search" aria-label="Search" name="search" [(ngModel)]="search">
                   </form>
                 </div>
               </div>
@@ -307,14 +298,18 @@
                   </thead>
                   <!-- Cuerpo de la tabla -->
                   <tbody>
-                    <tr>
-                      <th scope="row">UT******</th>
-                      <td>Nombre </td>
-                      <td>Nombre Tutoria</td>
-                      <td>Grupo</td>
-                      <td>000-000-0000</td>
+
+                    <tr *ngFor="let e of estudiantes">
+                      <th scope="row">{{e.matricula}}</th>
+                      <td>{{e.nombres}} {{e.apellidos}}</td>
+                      <td>{{e.carrera}}</td>
+                      <td>{{e.grupo}}</td>
+                      <td>{{e.telefono}}</td>
                       <td>
-                        <a class=" btn-status status-noL dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        <strong *ngIf="e.liberacion == 0" class="btn-status status-noL">No liberado</strong>
+                        <strong *ngIf="e.liberacion == 1" class="btn-status status-siL">Liberado</strong>
+                        <strong *ngIf="e.liberacion == 2" class="btn-status status-Mdc">Situacion Medica</strong>
+                        <!-- <a class=" btn-status status-noL dropdown-toggle" type="button" data-bs-toggle="dropdown"
                           aria-expanded="false">
                           No Liberado
                         </a>
@@ -323,71 +318,13 @@
                           <li><a class="dropdown-item fw-bold" href="#"><small>Pendiente</small></a></li>
                           <li><a class="dropdown-item fw-bold" href="#"><small>Si Liberado</small></a></li>
                           <li><a class="dropdown-item fw-bold" href="#"><small>Situación Mdca</small></a></li>
-                        </ul>
+                        </ul> -->
                       </td>
                     </tr>
-                    <tr>
-                      <th scope="row">UT******</th>
-                      <td>Nombre </td>
-                      <td>Nombre Tutoria</td>
-                      <td>Grupo</td>
-                      <td>000-000-0000</td>
-                      <td>
-                        <a class=" btn-status statusP dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          Pendiente
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item fw-bold" href="#"><small>No Liberado</small></a></li>
-                          <li><a class="dropdown-item fw-bold" href="#"><small>Pendiente</small></a></li>
-                          <li><a class="dropdown-item fw-bold" href="#"><small>Si Liberado</small></a></li>
-                          <li><a class="dropdown-item fw-bold" href="#"><small>Situación Mdca</small></a></li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">UT******</th>
-                      <td>Nombre </td>
-                      <td>Nombre Tutoria</td>
-                      <td>Grupo</td>
-                      <td>000-000-0000</td>
-                      <td>
-                        <a class=" btn-status status-siL dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          Liberado
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item fw-bold" href="#"><small>No Liberado</small></a></li>
-                          <li><a class="dropdown-item fw-bold" href="#"><small>Pendiente</small></a></li>
-                          <li><a class="dropdown-item fw-bold" href="#"><small>Si Liberado</small></a></li>
-                          <li><a class="dropdown-item fw-bold" href="#"><small>Situación Mdca</small></a></li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">UT******</th>
-                      <td>Nombre </td>
-                      <td>Nombre Tutoria</td>
-                      <td>Grupo</td>
-                      <td>000-000-0000</td>
-                      <td>
-                        <a class=" btn-status status-Mdc dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                          aria-expanded="false">
-                          Situación Mdca
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item fw-bold" href="#"><small>No Liberado</small></a></li>
-                          <li><a class="dropdown-item fw-bold" href="#"><small>Pendiente</small></a></li>
-                          <li><a class="dropdown-item fw-bold" href="#"><small>Si Liberado</small></a></li>
-                          <li><a class="dropdown-item fw-bold" href="#"><small>Situación Mdca</small></a></li>
-                        </ul>
-                      </td>
-                    </tr>
-        
         
                   </tbody>
                 </table>
-                <nav aria-label="Page navigation example">
+                <!-- <nav aria-label="Page navigation example">
                   <ul class="pagination justify-content-center">
                     <li class="page-item disabled">
                       <a class="page-link fw-bold">
@@ -400,11 +337,14 @@
                       <a class="page-link" href="#"> >> </a>
                     </li>
                   </ul>
-                </nav>
+                </nav> -->
               </div>
               </div>
             </div>
         
+            <div align="center" *ngIf="estudiante == 'vacio'">
+              No hay registros
+            </div>
           </div>
         
         </div>
