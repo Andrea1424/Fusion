@@ -22,13 +22,58 @@ a{
     color: var(--white-light);
     background-color: var(--red-75-outline);
 }
-ion-card{
-    border: solid 2px var(--black-50);
+.card-activity{
+    border: solid .8px var(--black-25);
 }
-ion-card:hover {
-    border: solid 2px var(--green-primary-student);
+.card-activity:hover {
+    border: solid .8px var(--green-primary-student);
     /* cursor: pointer;  DESCOMENTAR EN CASO DE HACERLO PARA PC */
 }
+.feed-container{
+  background-color: var(--white-light);
+}
+.card, .card-header, .card-footer{
+  background-color: transparent;
+  border: 0;
+}
+.card{
+  border: solid .6px var(--black-25);
+}
+ @media only screen and (max-width: 768px) {
+    /* .feed-container .row .col-sm-12 {
+      position: absolute;
+      background-color: var(--white-light);
+    } */
+    .feed-container .row .col-sm-12  > img{
+      position: relative;
+      width: 311px;
+      height: 311px;
+      top: -65px;
+      z-index: 0;
+    }  
+    .container-card{
+  padding-bottom: 50%;
+}
+.social-feed{
+    position: absolute;
+    background-color: var(--white-light);
+}
+.social-feed .row .col-sm-12 > img{
+  position: relative;
+  width: 311px;
+  height: 311px;
+  top: -150px;
+  left: 0px;
+  bottom: -80px;
+  right: 0px;
+    z-index: -1;
+    /* top: -200px; */
+  }
+   .social-feed .row .col-sm-12 .col-lg-8{
+    padding-top: 0px;
+  }
+
+  }
 .body-1{
     color: var(--white-light);
 }

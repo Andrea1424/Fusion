@@ -82,12 +82,14 @@
     --color-blanco: #ffffff;
     --color-negro: #000000; */
 }
-
+*{
+  font-family: 'Poppins';
+}
 
 
 //Headline 1;
 .h1-Light {
-  font-family: Poppins;
+  font-family: 'Poppins';
   font-size: 79px;
   font-weight: 300;
   line-height: 119px;
@@ -95,7 +97,7 @@
   text-align: left;
 }
 .h1-Regular {
-  font-family: Poppins;
+  font-family: 'Poppins';
   font-size: 79px;
   font-weight: 400;
   line-height: 119px;
@@ -286,6 +288,10 @@
   line-height: 30px;
   letter-spacing: 0.5px;
 }
+
+.btn-primario.btn-primario:hiber{ 
+  background-color: var(--red-75-outline);
+}
 //Headline 6
 .h6-regular {
   font-family: "Poppins";
@@ -383,25 +389,28 @@
   background-color: var(--blue-100);
   color: var(--white-light);
 }
+/* ESTILOS BOTONES GENERALES */
 button, .btn{
   text-align: center;
     margin: auto;
-    width: 100%;
+    //width: 100%;
     padding: 12px, 24px, 12px, 24px;
     gap: 8px;
     border-radius: 0px;
     text-transform: uppercase;
     font-family: "Poppins";
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 100%;
+    font-weight: 600;
     line-height: 26px;
-    letter-spacing: -0.03em;
+    border: solid 1px transparent;
+    letter-spacing: 0.03em;
 }
-.btn-primario[disabled] {
-  background-color: var(--black-75-outline);
-  color: var(--black-25);
+button[disabled] {
+  background-color: var(--black-50);
+  color: var(--white-light);
   border: solid 1px var(--black-75-outline);
 }
+/* ESTILOS BOTONES USUARIO ESTUDIANTE */
 .btn-primario{
   background: rgba(61, 236, 157, 1);
     color: var(--black-color-student);
@@ -423,23 +432,40 @@ button, .btn{
 .btn-link{
     font-weight: 800;
 font-size: 12px;
+letter-spacing: 1px;
 line-height: 18px;
-padding: 18px;
-gap: 10px;
 text-decoration: none;
+font-style: italic;
 text-align: center;
 text-transform: uppercase;
 color: var(--green-75-outline);
 }
 .btn-link:hover{
-  color: var(--green-primary-student
-  );
+  color: var(--green-primary-student);
+  text-underline-offset: 4px;
+  text-decoration: underline var(--green-75-outline);
 }
 a{
  color: var(--green-primary-student);
     text-decoration: none;
     font-weight:500;
     cursor: pointer;
+}
+/* ESTILOS PARA BTN DE CARD POST SOCIAL */
+.btn-like:hover{
+  border-radius: 5px;
+  font-weight: bold;
+  color: var(--blue-75-outline);
+}
+.btn-dislike:hover{
+  border-radius: 5px;
+  font-weight: bold;
+  color: var(--red-75-outline);
+}
+.btn-comment:hover{
+  border-radius: 5px;
+  font-weight: bold;
+  color: var(--green-75-outline);
 }
 ///PLACEHOLDER TEXT
 .textfiel-text {
@@ -468,10 +494,10 @@ a{
   line-height: 140%;
 }
 
-ion-input[type=email],
+/* ion-input[type=email],
 ion-input[type=text],
-ion-input[type=password]
- {
+ion-input[type=password] */
+.input_student {
   width: 100%;
   margin: 8px 0;
   padding: 12px 20px;
@@ -481,12 +507,14 @@ ion-input[type=password]
   outline: none;
 }
 
-
+.input-student[type=text]:focus{
+  color: var(--green-utvco);
+}
 
 
 ion-input[type=text]:focus,
 ion-input[type=password]:focus {
-  border: solid 1px var(--blue-75-outline);
+  border: solid 1px var(--green-75-outline);
 }
 //Estilos Ion-input
 /*ion-input{ 
@@ -504,7 +532,6 @@ ion-input:active{
   font-size: 10px;
   line-height: 15px;
 }
-
 .disponibles{
   background-color:#D3F1E4;
   color: var(--black-color-student);
@@ -575,6 +602,11 @@ tbody{
   color: var(--white-light);
   font-size: .85em;
   font-weight: 600;
+  border: solid 1px var(--green-100);
+}
+.btn-addTuto:hover{
+  background-color: var(--green-75-outline);
+  color: var(--white-light);
 }
 .btn-edit{
   background-color: var(--green-100);
