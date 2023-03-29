@@ -469,6 +469,7 @@ a{
 }
 
 ion-input[type=email],
+ion-input[type=text],
 ion-input[type=password]
  {
   width: 100%;
@@ -502,6 +503,12 @@ ion-input:active{
   font-weight: 400;
   font-size: 10px;
   line-height: 15px;
+}
+
+.disponibles{
+  background-color:#D3F1E4;
+  color: var(--black-color-student);
+  font-weight: 700;
 }
 /* Estilos para contenedor y Tabla de Administrador */
 .card-home{

@@ -8,7 +8,7 @@
 
 </ion-content>
  -->
-<ion-menu contentId="main-content">
+ <ion-menu contentId="main-content">
   <ion-header>
     <ion-toolbar>
       <ion-title>CultSports</ion-title>
@@ -17,37 +17,13 @@
   <ion-content class="">
     <ul class="navbar-nav justify-content-end flex-grow-1 p-3">
       <li class="nav-item my-2">
-        <a class="nav-link m-auto active" aria-current="page" href="#">Tablero</a>
+        <a class="nav-link m-auto active" aria-current="page" [routerLink]="['/home-admin']">Tablero</a>
       </li>
       <li class="nav-item my-2">
-        <a class="nav-link" href="#">Documentos</a>
+        <a class="nav-link" [routerLink]="['/list-documentos']">Documentos</a>
       </li>
-      <li class="nav-item dropdown my-2">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Tutorías Deportivas
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" [routerLink]="['/lista-tutorias']">Tutoria Deportiva 1</a></li>
-          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown my-2">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Tutorías Culturales
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" [routerLink]="['/lista-tutorias']">Tutoria Grupal</a></li>
-          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown my-2">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Tutorías Grupales
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" [routerLink]="['/lista-tutorias']">Tutoria Grupal</a></li>
-          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
-        </ul>
+      <li class="nav-item my-2">
+        <a class="nav-link" (click)="cerrar()">Cerrar sesión</a>
       </li>
     </ul>
   </ion-content>
@@ -69,11 +45,11 @@
             <div class="col-md-8 my-auto">
               <h5 class="fw-bold text-uppercase">Lista de Tutorías</h5>
             </div>
-            <div class="col-md-4 my-auto text-end">
+            <!-- <div class="col-md-4 my-auto text-end">
                 <button class="btn btn-addTuto w-50" [routerLink]="['/crud-tutoria']"> Añadir Tutoría</button>
-                <!-- <input class="form-control search-bar me-2" type="search" placeholder="Buscar Tutoría" aria-label="Search"> -->
-                <!-- <button class="btn btn-primario w-25" type="submit">Buscar</button> -->
-            </div>
+                <input class="form-control search-bar me-2" type="search" placeholder="Buscar Tutoría" aria-label="Search">
+                <button class="btn btn-primario w-25" type="submit">Buscar</button>
+            </div> -->
           </div>
         </div>
         <!-- SEGUNDA TABLA -->
@@ -114,8 +90,8 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item fw-bold" [routerLink]="['/detalle-tutoria',l.idActividad]"><small>Ver Más</small></a></li>
-                      <li><a class="dropdown-item fw-bold" [routerLink]="['/crud-tutoria']"><small>Editar</small></a></li>
-                      <li><a class="dropdown-item fw-bold btn-danger" href="#"><small>Eliminar</small></a></li>
+                      <!-- <li><a class="dropdown-item fw-bold" [routerLink]="['/crud-tutoria']"><small>Editar</small></a></li> -->
+                      <!-- <li><a class="dropdown-item fw-bold btn-danger" href="#"><small>Eliminar</small></a></li> -->
                     </ul>
                   </td>
                 </tr>

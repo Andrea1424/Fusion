@@ -1,9 +1,9 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
+<ion-header>
+  <span align="center">
+    <ion-title style="color: white;" (click)="cerrar()">Cerrar sesion</ion-title>
+  </span>
 </ion-header>
-
+<!--
 <ion-content>
 
 </ion-content>
@@ -11,7 +11,7 @@
 <ion-content class="ion-padding h-100">
   <div class=" d-flex h-100 w-100 p-3  pb-4 my-auto flex-columnn">
     <div class=" m-auto ">
-      <h5 class="h5-medium mb-auto">Registtrate y Participa en las Actividades</h5>
+      <h5 class="h5-medium mb-auto">Registrate y Participa en las Actividades</h5>
       <h2 class="h2-bold py-2 mb-5">Culturales & Deportivas</h2>
       <ion-grid class="mt-auto">
         <ion-row class=" text-center mt-5">
@@ -58,11 +58,11 @@
           <ion-card-subtitle class="body-2">{{c.descripcion}}</ion-card-subtitle>
           <ion-grid>
             <ion-row>
-              <ion-col size-md="4" *ngIf="!touch" class="text-center btn-publi" (click)="like(i)">
+              <ion-col size-md="4" *ngIf="!touch" class="text-center btn-publi" (click)="like(c.idPublicacion,i)">
                 <ion-icon name="heart-outline" class="text-primary"></ion-icon>
                 {{c.reacciones}}
               </ion-col>
-              <ion-col size-md="4" *ngIf="touch" class="text-center btn-publi" (click)="dislike(i)">
+              <ion-col size-md="4" *ngIf="touch" class="text-center btn-publi" (click)="dislike(c.idPublicacion,i)">
                 <ion-icon name="heart" class="text-primary"></ion-icon>
                 {{c.reacciones}}
               </ion-col>

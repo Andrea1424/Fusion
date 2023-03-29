@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class ListaTutoriasPage implements OnInit {
   id: any;
   lista: any;
 
-  constructor(private AR: ActivatedRoute, private AdminS: AdminService) { }
+  constructor(private AR: ActivatedRoute, private AdminS: AdminService, private router: Router) { }
 
   ngOnInit() {
     this.id = this.AR.snapshot.params['id'];
@@ -25,6 +25,11 @@ export class ListaTutoriasPage implements OnInit {
       console.log(data);
       this.lista = data;
     });
+  }
+
+  cerrar(){
+    localStorage.clear();
+    this.router.navigate(['/login'])
   }
 
 }

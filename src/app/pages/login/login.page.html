@@ -22,7 +22,7 @@
           <form class="formulario" [formGroup]="miFormulario">
             <div>
               <ion-label position="stacked " class="label">Ingresa tu Usuario</ion-label>
-              <ion-input type="email" [pattern]="emailCheck" placeholder="UT*****" formControlName="email"></ion-input>
+              <ion-input class="input_student" type="email" [pattern]="emailCheck" placeholder="UT*****" formControlName="email"></ion-input>
               <span *ngIf="emailReq()" class="label-help text-danger">Dirección de correo no válida</span>
               <span *ngIf="emailPattern()" class="label-help text-danger">Patrón incorrecto</span>
             </div>

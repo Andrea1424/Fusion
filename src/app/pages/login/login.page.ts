@@ -43,7 +43,20 @@ export class LoginPage implements OnInit {
     this.AS.login(this.miFormulario.value).subscribe((data: any) =>{
       console.log(data);
       if(data.resultado){
-        this.router.navigate(['/home']);
+        if(data.tipo == 1){
+          localStorage.setItem('matricula',data.matricula)
+          this.router.navigate(['/home']);
+        }
+        if(data.tipo == 2){
+          localStorage.setItem('idInstructor',data.idInstructor);
+          localStorage.setItem('tipo', data.tipo); 
+          localStorage.setItem('email',  this.miFormulario.value.email); 
+          this.router.navigate(['/home-instructor']);
+        }
+        if(data.tipo == 3){
+          localStorage.setItem('tipo', data.tipo); 
+          this.router.navigate(['/home-admin']);
+        }
       }else{
         alert(data.mensaje);
       }

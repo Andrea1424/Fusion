@@ -32,6 +32,7 @@
       <ion-chip class="no-disponibles">
         <ion-label>{{a.ocupados}} Ocupados</ion-label>
       </ion-chip>
+      
     </ion-card-header>
 
     <ion-card-content>
@@ -48,8 +49,8 @@
         <span class="encargado ">Lugar : &nbsp; </span><span class="name">{{a.lugar}}</span>
       </ion-item>
       <div>
-        <button class="btn btn-primario" *ngIf="a.cupo>a.ocupados" [routerLink]="['/form-person-data',a.idActividad]">Inscribirme</button>
-        <button class="btn btn-primario" *ngIf="a.cupo<=a.ocupados" disabled>Cupo lleno</button>
+        <button class="btn btn-primario" *ngIf="a.cupo*1>a.ocupados*1" [routerLink]="['/form-person-data',a.idActividad]">Inscribirme</button>
+        <button class="btn btn-primario" *ngIf="a.cupo*1<=a.ocupados*1" disabled>Cupo lleno</button>
       </div>
     </ion-card-content>
   </ion-card>

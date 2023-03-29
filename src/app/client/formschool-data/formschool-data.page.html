@@ -30,8 +30,9 @@
       <form [formGroup]="miFormulario">
         <ion-item fill="solid" class="mb-3">
           <ion-label position="stacked" class="label">Matricula</ion-label>
-          <ion-input type="text" formControlName="matricula"></ion-input>
-          <ion-note slot="helper">Enter a valid email</ion-note>
+          <ion-input type="text" formControlName="matricula" [hidden]="miFormulario.value.matricula"></ion-input>
+          <ion-label type="text">{{miFormulario.value.matricula}}</ion-label>
+          <ion-note slot="helper">Enter a valid nomenclatura</ion-note>
           <ion-note slot="error">Invalid email</ion-note>
         </ion-item>
 
@@ -57,15 +58,7 @@
         <ion-list>
           <ion-item class="mb-3">
             <ion-label position="stacked" class="label">Grupo</ion-label>
-            <ion-select placeholder="Selecciona tu Carrera" class="texttfiel-text" [multiple]="false" formControlName="grupo">
-              <ion-select-option value="G1">G1</ion-select-option>
-              <ion-select-option value="G2">G2 </ion-select-option>
-              <ion-select-option value="G3">G2</ion-select-option>
-              <ion-select-option value="G4">G3</ion-select-option>
-              <ion-select-option value="G5">G4</ion-select-option>
-              <ion-select-option value="G6">G5</ion-select-option>
-              <ion-select-option value="G7">G6</ion-select-option>
-            </ion-select>
+            <ion-input type="text" formControlName="grupo"></ion-input>
           </ion-item>
         </ion-list>
         <button class="btn btn-primario" *ngIf="miFormulario.valid" type="submit" (click)="save()">Continuar > > > </button>

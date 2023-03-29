@@ -69,4 +69,9 @@ export class HomeAdminPage implements OnInit {
     });
   }
 
+  cerrar(){
+    localStorage.clear();
+    this.router.navigate(['/login'])
+  }
+
 }

@@ -18,7 +18,7 @@
 
 </ion-content>
  -->
-<ion-menu contentId="main-content">
+ <ion-menu contentId="main-content">
   <ion-header>
     <ion-toolbar>
       <ion-title>CultSports</ion-title>
@@ -27,37 +27,13 @@
   <ion-content class="">
     <ul class="navbar-nav justify-content-end flex-grow-1 p-3">
       <li class="nav-item my-2">
-        <a class="nav-link m-auto active" aria-current="page" href="#">Tablero</a>
+        <a class="nav-link m-auto active" aria-current="page" [routerLink]="['/home-admin']">Tablero</a>
       </li>
       <li class="nav-item my-2">
-        <a class="nav-link" href="#">Documentos</a>
+        <a class="nav-link" [routerLink]="['/list-documentos']">Documentos</a>
       </li>
-      <li class="nav-item dropdown my-2">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Tutorías Deportivas
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" [routerLink]="['/lista-tutorias']">Tutoria Deportiva 1</a></li>
-          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown my-2">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Tutorías Culturales
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" [routerLink]="['/lista-tutorias']">Tutoria Grupal</a></li>
-          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown my-2">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Tutorías Grupales
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" [routerLink]="['/lista-tutorias']">Tutoria Grupal</a></li>
-          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
-        </ul>
+      <li class="nav-item my-2">
+        <a class="nav-link" (click)="cerrar()">Cerrar sesión</a>
       </li>
     </ul>
   </ion-content>
@@ -170,7 +146,7 @@
                 <h6 class="fw-bold">Sobre la Tutoría</h6>
               </div>
               <div class="col-2 m-auto pe-2 text-end">
-                <button class="btn-edit " [routerLink]="['/crud-tutoria']">
+                <button class="btn-edit " [routerLink]="['/crear-publicacion',a.idActividad]">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil"
                     viewBox="0 0 16 16">
                     <path

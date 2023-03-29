@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class DetalleTutoriaPage implements OnInit {
 
   search: any;
 
-  constructor(private AR: ActivatedRoute, private AdminS: AdminService) { }
+  constructor(private AR: ActivatedRoute, private AdminS: AdminService, private router: Router) { }
 
   ngOnInit() {
     // this.estudiante = 'vacio';
@@ -53,9 +53,9 @@ export class DetalleTutoriaPage implements OnInit {
   }
 
   getActividad(id: number){
-    this.AdminS.getActividades(id).subscribe((data: any) => {
+    this.AdminS.getActividadesId(id).subscribe((data: any) => {
       console.log(data);
-      this.actividad = data;
+      this.actividad = [data];
     });    
   }
 
@@ -64,6 +64,11 @@ export class DetalleTutoriaPage implements OnInit {
       console.log(data);
       this.estudiantes = data;
     });
+  }
+
+  cerrar(){
+    localStorage.clear();
+    this.router.navigate(['/login'])
   }
 
 }

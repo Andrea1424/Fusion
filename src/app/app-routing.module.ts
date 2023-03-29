@@ -95,6 +95,46 @@ const routes: Routes = [
     path: 'list-documentos',
     loadChildren: () => import('./admin/list-documentos/list-documentos.module').then( m => m.ListDocumentosPageModule)
   },
+  {
+    path: 'crear-publicacion',
+    loadChildren: () => import('./instructor/crear-publicacion/crear-publicacion.module').then( m => m.CrearPublicacionPageModule)
+  },
+  {
+    path: 'crear-publicacion/:id',
+    loadChildren: () => import('./instructor/crear-publicacion/crear-publicacion.module').then( m => m.CrearPublicacionPageModule)
+  },
+  {
+    path: 'form-posts',
+    loadChildren: () => import('./instructor/form-posts/form-posts.module').then( m => m.FormPostsPageModule)
+  },
+  {
+    path: 'ver-post',
+    loadChildren: () => import('./instructor/ver-post/ver-post.module').then( m => m.VerPostPageModule)
+  },
+  {
+    path: 'ver-publicacion/:id',
+    loadChildren: () => import('./instructor/ver-publicacion/ver-publicacion.module').then( m => m.VerPublicacionPageModule)
+  },
+  {
+    path: 'home-instructor',
+    loadChildren: () => import('./instructor/home-instructor/home-instructor.module').then( m => m.HomeInstructorPageModule)
+  },
+  {
+    path: 'form-horarios',
+    loadChildren: () => import('./instructor/form-horarios/form-horarios.module').then( m => m.FormHorariosPageModule)
+  },
+  {
+    path: 'form-horarios/:id',
+    loadChildren: () => import('./instructor/form-horarios/form-horarios.module').then( m => m.FormHorariosPageModule)
+  },
+  {
+    path: 'detalle-actividad/:id',
+    loadChildren: () => import('./instructor/detalle-actividad/detalle-actividad.module').then( m => m.DetalleActividadPageModule)
+  },
+
+
+
+
 
 ];
 

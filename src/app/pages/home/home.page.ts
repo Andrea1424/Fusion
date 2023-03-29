@@ -24,7 +24,7 @@ export class HomePage implements OnInit{
   ];
   
   publicaciones: any;
-  touch: boolean = false;
+  touch: any;
   estudiante: any;
 
   constructor(private CS: ClientService, private router: Router) {}
@@ -45,14 +45,13 @@ export class HomePage implements OnInit{
     });
   }
 
-  like(id: number){
+  like(id: number, i: any){
     console.log('Like', id);
     if(localStorage.getItem('idUsuario')){
-      this.touch = true;
+      // this.touch[i] = true;
       let reacc;
-      this.publicaciones[id].reacciones = this.publicaciones[id].reacciones*1 + 1;
       reacc = {
-        idPublicacion: this.publicaciones[id].idPublicacion,
+        idPublicacion: id,
         idUsuario: localStorage.getItem('idUsuario'),
         reaccion: "Like",
       };
@@ -60,8 +59,18 @@ export class HomePage implements OnInit{
         console.log(data);
         if(data.resultado){
           console.log('Like');
+          this.publicaciones[i].reacciones = this.publicaciones[i].reacciones*1 + 1;
         }else{
-          alert(data.mensaje)
+          // alert(data.mensaje);
+          this.CS.deleteReaccion(localStorage.getItem('idUsuario'),this.publicaciones[i].idPublicacion).subscribe((data: any) => {
+            console.log(data);
+            if(data.resultado){
+              console.log('Dislike');
+              this.publicaciones[i].reacciones = this.publicaciones[i].reacciones*1 - 1;
+            }else{
+              alert(data.mensaje)
+            }
+          });
         }
       });
     }else{
@@ -69,12 +78,12 @@ export class HomePage implements OnInit{
     }
   }
   
-  dislike(id: number){
+  dislike(id: number, i: any){
     console.log('Dislike', id);
     if(localStorage.getItem('idUsuario')){
-      this.touch = false;
+      // this.touch[i] = false;
       this.publicaciones[id].reacciones = this.publicaciones[id].reacciones*1 - 1;
-      this.CS.deleteReaccion(localStorage.getItem('idUsuario'),this.publicaciones[id].idPublicacion).subscribe((data: any) => {
+      this.CS.deleteReaccion(localStorage.getItem('idUsuario'),this.publicaciones[i].idPublicacion).subscribe((data: any) => {
         console.log(data);
         if(data.resultado){
           console.log('Dislike');
@@ -87,9 +96,14 @@ export class HomePage implements OnInit{
 
   getPublicaciones(){
     this.CS.getPublicaciones().subscribe((data: any) => {
-      console.log(data);
       this.publicaciones = data;
+      console.log(data);
     });
+  }
+
+  cerrar(){
+    localStorage.clear();
+    this.router.navigate(['/login'])
   }
   
 }

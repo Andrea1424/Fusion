@@ -42,7 +42,7 @@ export class FormSelectActivityPage implements OnInit {
     this.CS.inscripcion(estudiante).subscribe((data: any) => {
       console.log(data);
       if(data.resultado){
-        localStorage.clear()
+        // localStorage.clear()
         this.router.navigate(['/comunidad'])
       }else{
         alert(data.mensaje)

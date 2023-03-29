@@ -15,7 +15,7 @@ export class ListaActividadesPage implements OnInit {
   constructor(private AR: ActivatedRoute, private CS: ClientService) { }
 
   ngOnInit() {
-    localStorage.clear();
+    // localStorage.clear();
     this.id = this.AR.snapshot.params['id'];
     console.log(this.id);
     this.getActividadesId(this.id);

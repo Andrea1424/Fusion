@@ -8,7 +8,7 @@
 
 </ion-content>
  -->
-<ion-menu contentId="main-content">
+ <ion-menu contentId="main-content">
   <ion-header>
     <ion-toolbar>
       <ion-title>CultSports</ion-title>
@@ -17,37 +17,13 @@
   <ion-content class="">
     <ul class="navbar-nav justify-content-end flex-grow-1 p-3">
       <li class="nav-item my-2">
-        <a class="nav-link m-auto active" aria-current="page" [routerLink]="['/home-admin']">Tablero</a>
+        <a class="nav-link m-auto active" aria-current="page" [routerLink]="['/home-instructor']">Tablero</a>
       </li>
       <li class="nav-item my-2">
         <a class="nav-link" [routerLink]="['/list-documentos']">Documentos</a>
       </li>
-      <li class="nav-item dropdown my-2">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Tutorías Deportivas
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" [routerLink]="['/lista-tutorias']">Tutoria Deportiva 1</a></li>
-          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown my-2">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Tutorías Culturales
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Tutoria 1</a></li>
-          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
-        </ul>
-      </li>
-      <li class="nav-item dropdown my-2">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Tutorías Grupales
-        </a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Tutoria 1</a></li>
-          <li><a class="dropdown-item" href="#">Tutoria 2</a></li>
-        </ul>
+      <li class="nav-item my-2">
+        <a class="nav-link" (click)="cerrar()">Cerrar sesión</a>
       </li>
     </ul>
   </ion-content>
