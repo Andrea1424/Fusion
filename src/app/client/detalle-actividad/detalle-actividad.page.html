@@ -16,6 +16,7 @@
       </ion-title>
     </ion-toolbar>
   </ion-header>
+
 <ion-content class="ion-padding">
   <div class="container my-auto">
     <ion-breadcrumbs class="my-2">
@@ -106,13 +107,13 @@
     </div>
   </div>
 
-  <div class="container-fluid feed-container m-auto">
+  <div class="container feed-container m-auto">
     <div class="row">
-      <div class="col-sm-12 col-lg-8">
+      <div class="col-sm-12 col-lg-12">
         <div class="title-feed text-center">
           <h5 class="h5-bold">Comunidad UtVCO</h5>
         </div>
-        <div class="card bg-transparent  p-0 m-auto my-2" style="max-width: 28rem;"
+        <div class="card bg-transparent border-light border-opacity-25 mb-3 m-auto my-2" style="max-width: 28rem;"
            *ngFor="let c of cards; let i = index">
           <div class="card-header p-0">
             <img [src]=c.imgTuto class="" alt="">
@@ -156,7 +157,7 @@
     </div>
   </div>
 
-  <div class="container-fluid feed-container m-auto">
+   <!--   <div class="container-fluid feed-container m-auto">
     <div class="row">
       <div class="col-sm-12 col-lg-8">
         <div class="title-feed text-center">
@@ -166,12 +167,12 @@
           <div class="card-header p-0">
             <img src="./assets/img/cultural.jpg" class="" alt="">
           </div>
-          <!--   <div class="card-body py-sm-0 text-light">
+            <div class="card-body py-sm-0 text-light">
             <h5 class="h5-bold card-title "> {{c.nombre}} </h5>
             <p class="card-text"><small class=""> {{c.fecha}} </small></p>
-            <p class="card-text "> {{c.descripcion}} </p> -->
+            <p class="card-text "> {{c.descripcion}} </p>
         </div>
-        <!--       <div class="card-footer p-sm-0 p-lg-2 text-light">
+           <div class="card-footer p-sm-0 p-lg-2 text-light">
             <div class="row  m-auto  text-center ">
               <div class="col">
                 <button class="btn btn-like  text-light">
@@ -201,19 +202,18 @@
             </div>
           </div> 
         </div>
-      </div>
+      </div> 
     </div>
   </div>-->
 
-        <div class="container m-auto p-2">
-
+        <!--  <div class="container m-auto p-2">
           <nav>
             <div class="nav nav-pills nav-justified" id="nav-tab">
               <button class="nav-link  " id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
                 role="tab" aria-controls="nav-home ">Acerca De</button>
               <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
                 type="button" role="tab" aria-controls="nav-profile">Comunidad</button>
-              <!--   <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
+               <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
         role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button> -->
               <!--  <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button"
         role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button> 
@@ -260,7 +260,7 @@
   </div>
 </ion-content>-->
 
-              <ion-header>
+             <!--  <ion-header>
                 <ion-toolbar>
                   <ion-title>
                     <a [routerLink]="['/lista-actividades',id]" class="p-auto"><ion-icon
@@ -272,8 +272,8 @@
               <ion-breadcrumbs class="ion-padding">
                 <ion-breadcrumb [routerLink]="['/lista-actividades']" class=" sub-1">Actividades</ion-breadcrumb>
                 <ion-breadcrumb class="actual sub-1">Detalles Actividades</ion-breadcrumb>
-              </ion-breadcrumbs>
-              <ion-content class="ion-padding">
+              </ion-breadcrumbs> -->
+               <!--  <ion-content class="ion-padding">
 
                 <ion-card *ngFor="let a of actividad">
                   <img alt="Silhouette of mountains" src="./assets/img/cultural.jpg" />
@@ -315,10 +315,10 @@
                       type="button" role="tab" aria-controls="nav-home ">Acerca De</button>
                     <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
                       type="button" role="tab" aria-controls="nav-profile">Comunidad</button>
-                    <!--   <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
+                    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
       role="tab" aria-controls="nav-contact" aria-selected="false">Contact</button> -->
                     <!--  <button class="nav-link" id="nav-disabled-tab" data-bs-toggle="tab" data-bs-target="#nav-disabled" type="button"
-      role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button> -->
+      role="tab" aria-controls="nav-disabled" aria-selected="false" disabled>Disabled</button>
                   </div>
                 </nav>
                 <div class="tab-content" id="nav-tabContent">
@@ -359,12 +359,12 @@
 
                     </ion-card>
                   </div>
-                  <!-- <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
+                   <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
     
-  </div> -->
-                  <!--  <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">...</div> -->
+  </div> 
+                <div class="tab-pane fade" id="nav-disabled" role="tabpanel" aria-labelledby="nav-disabled-tab" tabindex="0">...</div>
                 </div>
-                <!-- <ion-segment value="default" id="pills-tab" >
+               <ion-segment value="default" id="pills-tab" >
   <ion-segment-button value="default" id="home-tab" data-bs-toogle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
     <ion-label>Acerca de</ion-label>
   </ion-segment-button>
@@ -372,13 +372,13 @@
     <ion-label>Comunidad</ion-label>
   </ion-segment-button>
   
-</ion-segment> -->
-                <!--   <div class="container-fluid container-info "  id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+</ion-segment>
+                   <div class="container-fluid container-info "  id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
     
   </div>
   <div class="container-fluid container-info " id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
     
 asa        
-  </div> -->
+  </div> 
 
-              </ion-content>
+              </ion-content> -->
