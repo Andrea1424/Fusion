@@ -72,7 +72,11 @@
               <tbody>
                 <tr *ngFor="let l of lista">
                   <th scope="row">{{l.actividad}}</th>
-                  <td> <span class="badge badge-deportiva p-2">Deportiva</span> </td>
+                  <td>
+                     <span class="badge badge-deportiva p-2" *ngIf="id == 1">Deportiva</span>
+                     <span class="badge badge-deportiva p-2" *ngIf="id == 2">Cultural</span>
+                     <span class="badge badge-deportiva p-2" *ngIf="id == 3">Grupal</span>
+                  </td>
                   <td>{{l.nombre + ' ' + l.apellidos}}</td>
                   <td>{{l.telefono}}</td>
                   <td>{{l.lugar}}</td>

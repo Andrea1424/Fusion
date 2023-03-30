@@ -25,4 +25,12 @@ export class VerPostPage implements OnInit {
     });
   }
 
+  eliminar(id: any){
+    console.log(id);
+    this.AdminS.eliminarPublicacion(id).subscribe((data: any) => {
+      console.log(data);
+      this.getPublicacionesId(this.id)
+    });
+  }
+
 }
