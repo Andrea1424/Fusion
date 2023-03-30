@@ -22,7 +22,7 @@
           <form class="formulario" [formGroup]="miFormulario">
             <div>
               <ion-label position="stacked " class="label">Ingresa tu Usuario</ion-label>
-              <ion-input  class="input_student" type="email" [pattern]="emailCheck" placeholder="UT*****" formControlName="email"></ion-input>
+              <ion-input  class="input_student" type="email" [pattern]="emailCheck" placeholder="***@***" formControlName="email"></ion-input>
               <span *ngIf="emailReq()" class="label-help text-danger">Dirección de correo no válida</span>
               <span *ngIf="emailPattern()" class="label-help text-danger">Patrón incorrecto</span>
             </div>
@@ -30,6 +30,10 @@
               <ion-label position="stacked" class="label pb-2">Ingresa tu Contraseña</ion-label>
               <ion-input type="password" class="input_student" placeholder="Ingrese su contraseña" formControlName="password"></ion-input>
               <span class="form-text text-danger" *ngIf="campoValido('password')">Minimo 8 caracteres</span>
+            </div>
+            <div>
+              <ion-label class="label">Ingresa tu matricula</ion-label>
+              <ion-input  class="input_student" type="text" placeholder="UT*****" formControlName="matricula"></ion-input>
             </div>
             <div class="px-4">
               <div class="form-check">

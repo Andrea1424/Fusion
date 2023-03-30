@@ -24,6 +24,7 @@ export class LoginPage implements OnInit {
   miFormulario: FormGroup = this.fb.group({
     email: ['',[Validators.required, Validators.minLength(5), Validators.maxLength(255)]],
     password: ['',[Validators.required, Validators.minLength(8), Validators.maxLength(255)]],
+    matricula: ['',[]],
   });
 
   constructor(private fb: FormBuilder, private router: Router, private AS: AuthService) {}
@@ -31,7 +32,8 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.miFormulario.setValue({
       email: '',
-      password: ''
+      password: '',
+      matricula: ''
     });
   }
   campoValido(campo: string) {
@@ -44,7 +46,12 @@ export class LoginPage implements OnInit {
       console.log(data);
       if(data.resultado){
         if(data.tipo == 1){
-          localStorage.setItem('matricula',data.matricula)
+          if(data.matricula){
+            localStorage.setItem('matricula',data.matricula)
+          }else{
+            localStorage.setItem('matricula',this.miFormulario.value.matricula)
+          }
+          localStorage.setItem('email',this.miFormulario.value.email)
           this.router.navigate(['/home']);
         }
         if(data.tipo == 2){

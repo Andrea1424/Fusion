@@ -36,14 +36,16 @@ export class FormSelectActivityPage implements OnInit {
       matricula: localStorage.getItem('matricula'),
       telefono: localStorage.getItem('telefono'),
       sexo: localStorage.getItem('sexo'),
-      grupo: localStorage.getItem('grupo')
+      grupo: localStorage.getItem('grupo'),
+      email: localStorage.getItem('email')
     }
     console.log(estudiante);
     this.CS.inscripcion(estudiante).subscribe((data: any) => {
       console.log(data);
       if(data.resultado){
         // localStorage.clear()
-        this.router.navigate(['/comunidad'])
+        alert(data.mensaje)
+        this.router.navigate(['/home'])
       }else{
         alert(data.mensaje)
       }
