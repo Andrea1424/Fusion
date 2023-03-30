@@ -96,4 +96,8 @@ export class AdminService {
   getPublicacionesId(id: any){
     return this.http.get(`${this.URL}publicaciones/getAllId.php?idInstructor=${id}`)
   }
+
+  eliminarPublicacion(id: any){
+    return this.http.get(`${this.URL}publicaciones/delete.php?idPublicacion=${id}`)
+  }
 }
