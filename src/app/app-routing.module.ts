@@ -130,7 +130,15 @@ const routes: Routes = [
   {
     path: 'detalle-actividad/:id',
     loadChildren: () => import('./instructor/detalle-actividad/detalle-actividad.module').then( m => m.DetalleActividadPageModule)
+  },  {
+    path: 'list-comentarios',
+    loadChildren: () => import('./instructor/list-comentarios/list-comentarios.module').then( m => m.ListComentariosPageModule)
   },
+  {
+    path: 'form-comentarios',
+    loadChildren: () => import('./client/form-comentarios/form-comentarios.module').then( m => m.FormComentariosPageModule)
+  },
+
 
 
 
