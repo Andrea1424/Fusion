@@ -32,7 +32,7 @@ export class ClientService {
   }
   
   getPublicacionesId(id: any){
-    return this.http.get(`${this.URL}publicaciones/getOneId.php?idActividad=${id}`)
+    return this.http.get(`${this.URL}publicaciones/getOneAct.php?idActividad=${id}`)
   }
 
   reaccion(reaccion: any){

@@ -45,7 +45,12 @@ export class FormSelectActivityPage implements OnInit {
       if(data.resultado){
         // localStorage.clear()
         alert(data.mensaje)
-        this.router.navigate(['/home'])
+        this.CS.getIdUsuario(estudiante.matricula).subscribe((data: any) => {
+          console.log(data);
+          localStorage.removeItem('idUsuario');
+          localStorage.setItem('idUsuario',data.idUsuario);
+          this.router.navigate(['/home'])
+        });
       }else{
         alert(data.mensaje)
       }

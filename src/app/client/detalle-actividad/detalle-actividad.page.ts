@@ -81,4 +81,37 @@ export class DetalleActividadPage implements OnInit {
     });
   }
 
+  like(id: number, i: any){
+    console.log('Like', id);
+    if(localStorage.getItem('idUsuario') != 'undefined'){
+      // this.touch[i] = true;
+      let reacc;
+      reacc = {
+        idPublicacion: id,
+        idUsuario: localStorage.getItem('idUsuario'),
+        reaccion: "Like",
+      };
+      this.CS.reaccion(reacc).subscribe((data: any) => {
+        console.log(data);
+        if(data.resultado){
+          console.log('Like');
+          this.publicaciones[i].reacciones = this.publicaciones[i].reacciones*1 + 1;
+        }else{
+          // alert(data.mensaje);
+          this.CS.deleteReaccion(localStorage.getItem('idUsuario'),this.id).subscribe((data: any) => {
+            console.log(data);
+            if(data.resultado){
+              console.log('Dislike');
+              this.publicaciones[i].reacciones = this.publicaciones[i].reacciones*1 - 1;
+            }else{
+              alert(data.mensaje)
+            }
+          });
+        }
+      });
+    }else{
+      alert('Usuario desconocido')
+    }
+  }
+
 }
