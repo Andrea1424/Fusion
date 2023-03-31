@@ -43,7 +43,7 @@ export class FormSelectActivityPage implements OnInit {
       console.log(data);
       if(data.resultado){
         // localStorage.clear()
-        this.router.navigate(['/comunidad'])
+        this.router.navigate(['/home'])
       }else{
         alert(data.mensaje)
       }
