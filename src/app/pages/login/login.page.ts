@@ -48,11 +48,17 @@ export class LoginPage implements OnInit {
         if(data.tipo == 1){
           if(data.matricula){
             localStorage.setItem('matricula',data.matricula)
+            localStorage.setItem('email',this.miFormulario.value.email)
+            this.router.navigate(['/home']);
           }else{
-            localStorage.setItem('matricula',this.miFormulario.value.matricula)
+            if(this.miFormulario.value.matricula != ''){
+              localStorage.setItem('matricula',this.miFormulario.value.matricula)
+              localStorage.setItem('email',this.miFormulario.value.email)
+              this.router.navigate(['/home']);
+            }else{
+              alert('Matricula no ingresada')
+            }
           }
-          localStorage.setItem('email',this.miFormulario.value.email)
-          this.router.navigate(['/home']);
         }
         if(data.tipo == 2){
           localStorage.setItem('idInstructor',data.idInstructor);

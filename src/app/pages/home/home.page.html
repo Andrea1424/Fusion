@@ -92,17 +92,11 @@
               <div class="card-footer p-sm-0 p-lg-2 text-black">
                 <div class="row  m-auto text-center ">
                   <div class="col">
-                    <button class="btn btn-like">
+                    <button class="btn btn-like" (click)="like(c.idActividad,i)">
                       <ion-icon name="heart-outline" class=" text-primary"></ion-icon>
                     {{c.reacciones}}
                     </button>
       
-                  </div>
-                  <div class="col">
-                    <button class="btn btn-dislike ">
-                      <ion-icon name="heart-dislike-outline" class="text-danger"></ion-icon>
-                      {{c.reacciones}}
-                    </button>
                   </div>
                   <div class="col">
                     <button class="btn btn-comment">

@@ -114,9 +114,9 @@
           <h5 class="h5-bold">Comunidad UtVCO</h5>
         </div>
         <div class="card bg-transparent border-light border-opacity-25 mb-3 m-auto my-2" style="max-width: 28rem;"
-           *ngFor="let c of cards; let i = index">
+           *ngFor="let c of publicaciones; let i = index">
           <div class="card-header p-0">
-            <img [src]=c.imgTuto class="" alt="">
+            <img [src]=c.imagen class="" alt="">
           </div>
           <div class="card-body py-sm-0 text-light">
             <h5 class="h5-bold card-title "> {{c.nombre}} </h5>
@@ -133,21 +133,9 @@
   
               </div>
               <div class="col">
-                <button class="btn btn-dislike text-light ">
-                  <ion-icon name="heart-dislike-outline" class="text-danger"></ion-icon>
-                  {{c.dislikes}}
-                </button>
-              </div>
-              <div class="col">
                 <button class="btn btn-comment  text-light">
                   <ion-icon name="chatbubble-outline" class="text-success"></ion-icon>
                   {{c.comments}}
-                </button>
-              </div>
-              <div class="col">
-                <button class="btn btn-shared  text-light">
-                  <ion-icon name="arrow-redo-outline" class="text-black"></ion-icon>
-                  {{c.shared}}
                 </button>
               </div>
             </div>

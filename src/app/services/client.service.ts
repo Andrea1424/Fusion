@@ -30,6 +30,10 @@ export class ClientService {
   getPublicaciones(){
     return this.http.get(`${this.URL}publicaciones/getAll.php`)
   }
+  
+  getPublicacionesId(id: any){
+    return this.http.get(`${this.URL}publicaciones/getOneId.php?idActividad=${id}`)
+  }
 
   reaccion(reaccion: any){
     return this.http.post(`${this.URL}reacciones/add.php`,reaccion);

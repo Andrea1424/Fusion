@@ -61,8 +61,14 @@ export class DetalleTutoriaPage implements OnInit {
 
   getEstudiantes(id: number){
     this.AdminS.getEstudiantes(id).subscribe((data: any) => {
-      console.log(data);
-      this.estudiantes = data;
+      if(data[0]){
+        console.log(data);
+        this.estudiante = '';
+        this.estudiantes = data;
+      }else{
+        this.estudiante = 'vacio';
+        this.estudiantes = [];
+      }
     });
   }
 

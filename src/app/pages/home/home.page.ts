@@ -47,7 +47,7 @@ export class HomePage implements OnInit{
 
   like(id: number, i: any){
     console.log('Like', id);
-    if(localStorage.getItem('idUsuario')){
+    if(localStorage.getItem('idUsuario') != 'undefined'){
       // this.touch[i] = true;
       let reacc;
       reacc = {

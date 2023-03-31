@@ -49,6 +49,8 @@ export class DetalleActividadPage implements OnInit {
 
   id: any;
   actividad: any;
+  publicaciones: any;
+
   constructor(private AR: ActivatedRoute, private CS: ClientService) { }
 
   ngOnInit() {
@@ -57,6 +59,19 @@ export class DetalleActividadPage implements OnInit {
     console.log(this.id);
     localStorage.setItem('id',this.id)
     this.getActividad(this.id);
+    this.getPublicacionesId(this.id);
+  }
+
+  getPublicacionesId(id: any){
+    this.CS.getPublicacionesId(id).subscribe((data: any) =>{
+      console.log(data);
+      if(data.resultado == false){
+        console.log('vacio');
+        this.publicaciones = [];
+      }else{
+        this.publicaciones = data;
+      }
+    });
   }
 
   getActividad(id: number){
