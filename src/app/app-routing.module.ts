@@ -130,7 +130,11 @@ const routes: Routes = [
   {
     path: 'detalle-actividad/:id',
     loadChildren: () => import('./instructor/detalle-actividad/detalle-actividad.module').then( m => m.DetalleActividadPageModule)
+  },  {
+    path: 'lista-doc-instruc',
+    loadChildren: () => import('./instructor/lista-doc-instruc/lista-doc-instruc.module').then( m => m.ListaDocInstrucPageModule)
   },
+
 
 
 

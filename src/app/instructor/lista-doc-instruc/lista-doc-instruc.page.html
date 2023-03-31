@@ -1,7 +1,7 @@
 <ion-header>
   <nav class="navbar navbar-light bg-light ">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold" [routerLink]="['/home-admin']">Cultura y Deportes</a>
+      <a class="navbar-brand fw-bold" [routerLink]="['/home-instructor']">Cultura y Deportes</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas6"
         aria-controls="#navbarOffcanvas6" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -16,10 +16,10 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item my-2">
-              <a class="nav-link " [routerLink]="['/home-admin']">Tablero</a>
+              <a class="nav-link " [routerLink]="['/home-instructor']">Tablero</a>
             </li>
             <li class="nav-item my-2">
-              <a class="nav-link" [routerLink]="['/list-documentos']">Documentos</a>
+              <a class="nav-link" [routerLink]="['/lista-doc-instruc']">Documentos Instructor</a>
             </li>
             <li class="nav-item my-2">
               <a class="nav-link text-danger" (click)="cerrar()">Cerrar Sesión</a>
