@@ -1,7 +1,18 @@
 <ion-header>
-  <span align="center">
+  <ion-toolbar>
+   
+    <ion-buttons slot="primary">
+      <ion-button fill="outline" color="danger" (click)="cerrar()">
+         Salir 
+        <ion-icon name="exit-outline" color="danger"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Bienvenido</ion-title>
+  </ion-toolbar>
+
+  <!-- <span align="center">
     <ion-title style="color: white;" (click)="cerrar()">Cerrar sesion</ion-title>
-  </span>
+  </span> -->
 </ion-header>
 <!--
 <ion-content>
